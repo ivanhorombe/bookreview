@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs")%>
+<h1>New Book Review</h1>
+<%if(locals.error){%>
+    <h1><%=error%></h1>
+<%}%>
+<form action="/newbook" method="post">
+    <input type="text" name="isbn" autocomplete="off" placeholder="ISBN"/>
+    <input type="text" name="description" autocomplete="off" placeholder="Description"/>
+    <input type="text" name="rating" autocomplete="off" placeholder="Rating"/>
+    <button type="submit">Add</button> 
+</form>
+
+<%- include("partials/footer.ejs")%>

@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs")%>
+<h1>Edit Book Review</h1>
+<%if(locals.error){%>
+    <h1><%=error%></h1>
+<%}%>
+<form action="/editbook" method="post">
+    <input type="text" name="isbn" autocomplete="off" placeholder="ISBN" value="<%=review.isbn%>"/>
+    <input type="text" name="description" autocomplete="off" placeholder="Description" value="<%=review.description%>"/>
+    <input type="text" name="rating" autocomplete="off" placeholder="Rating" value="<%=review.rating%>"/>
+    <button type="submit" name="btn" value="<%=review.id%>"">Edit</button> 
+</form>
+
+<%- include("partials/footer.ejs")%>

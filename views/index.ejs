@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs")%>
+<%reviews.forEach((review) => {%>
+    <div class="container">
+        <h1><a href="<%=review.book_url%>"><%=review.title%></a> <%=review.rating%>/10</h1>
+        <h2><a href="<%=review.author_url%>"><%=review.author%></a></h2>
+        <p><%=review.description%></p>
+        <form action="/edit" method = "post"><button  type="submit" name="edit" value="<%=review.id%>">Edit</button></form>
+    </div>
+<%});%>
+<form action="/add" method="post"><button type="submit" name="new">Add Book</button></form>
+<%- include("partials/footer.ejs")%>
